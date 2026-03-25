@@ -1,0 +1,118 @@
+.\" Man page for posting-import
+.TH POSTING-IMPORTER 1 "2024" "0.1.0" "posting-import manual"
+.SH NAME
+posting-import \- Import API collections from Postman, Insomnia, and Bruno to Posting TUI format
+.SH SYNOPSIS
+.B posting-import
+[\fB\-a\fR \fIAPP\fR]
+[\fB\-s\fR \fISOURCE\fR]
+[\fB\-t\fR \fITARGET\fR]
+[\fB\-w\fR]
+[\fB\-v\fR]
+[\fB\-n\fR]
+[\fB\-c\fR \fINAME\fR]
+[\fB\-\-list\-sources\fR]
+[\fB\-\-format\fR \fIFORMAT\fR]
+.PP
+\fBposting-import\fR \fB\-\-help\fR
+.PP
+\fBposting-import\fR \fB\-\-version\fR
+.SH DESCRIPTION
+.B posting-import
+is a CLI tool that imports API collections from popular API clients (Postman, Insomnia, Bruno) and converts them to the Posting TUI's YAML format.
+.PP
+Supported sources:
+.RS
+.IP \(bu 2
+Postman collections (v2.0/v2.1 JSON format)
+.IP \(bu 2
+Insomnia collections (v4/v5 JSON format)
+.IP \(bu 2
+Bruno collections (.bru format and OpenCollection YAML format)
+.RE
+.SH OPTIONS
+.TP
+.BR \-a ", " \-\-app " " \fIAPP\fR
+Source application type (required). Must be one of: postman, insomnia, bruno.
+.TP
+.BR \-s ", " \-\-source " " \fISOURCE\fR
+Path to the source collection file or directory (required).
+.TP
+.BR \-t ", " \-\-target " " \fITARGET\fR
+Output directory for the Posting collection (default: current directory).
+.TP
+.BR \-w ", " \-\-overwrite
+Overwrite existing files.
+.TP
+.BR \-v ", " \-\-verbose
+Verbose output. Can be repeated for more verbosity.
+.TP
+.BR \-n ", " \-\-dry\-run
+Do not write output. Useful with \fB\-\-list\-sources\fR.
+.TP
+.BR \-c ", " \-\-name " " \fINAME\fR
+Collection name (overrides detected name).
+.TP
+.B \-\-list\-sources
+List supported source formats and exit.
+.TP
+.B \-\-format " " \fIFORMAT\fR
+Output format for collection info. One of: text (default), json, yaml.
+.TP
+.BR \-h ", " \-\-help
+Print help information.
+.TP
+.BR \-V ", " \-\-version
+Print version information.
+.SH EXAMPLES
+.SS Import a Postman collection
+.PP
+.EX
+posting-import -a postman -s collection.json -t ./output
+.EE
+.SS Import an Insomnia collection
+.PP
+.EX
+posting-import -a insomnia -s insomnia-export.json -t ./output
+.EE
+.SS Import a Bruno collection
+.PP
+.EX
+posting-import -a bruno -s ./my-bruno-collection -t ./output
+.EE
+.SS List supported formats
+.PP
+.EX
+posting-import --list-sources
+.EE
+.SS Dry run to preview collection
+.PP
+.EX
+posting-import -a postman -s collection.json -t ./output -n
+.EE
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+Error occurred.
+.SH FILES
+.TP
+.I ~/.config/posting-import/
+User configuration directory (if applicable).
+.SH ENVIRONMENT
+.TP
+.B POSTING_IMPORTER_VERBOSE
+Set verbosity level (1-3).
+.SH SEE ALSO
+.BR posting (1),
+.BR curl (1)
+.PP
+Posting TUI: https://posting.sh
+.br
+Project homepage: https://github.com/yourusername/posting-import
+.SH AUTHORS
+Your Name <your.email@example.com>
+.SH LICENSE
+MIT OR Apache-2.0

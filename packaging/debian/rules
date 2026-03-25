@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+export CARGO_HOME = $(CURDIR)/target/cargo
+export CARGO_TARGET_DIR = $(CURDIR)/target/debian
+
+%:
+	dh $@ --buildsystem=cargo
+
+override_dh_auto_build:
+	cargo build --release --locked
+
+override_dh_auto_test:
+	# Skip tests during package build - run manually with cargo test
+
+override_dh_install:
+	dh_install
+	install -Dm755 target/release/posting-importer debian/posting-importer/usr/bin/posting-importer
+	install -Dm644 completions/posting-importer.bash debian/posting-importer/usr/share/bash-completion/completions/posting-importer
+	install -Dm644 completions/posting-importer.fish debian/posting-importer/usr/share/fish/vendor_completions.d/posting-importer.fish
+	install -Dm644 completions/_posting-importer debian/posting-importer/usr/share/zsh/vendor-functions/_posting-importer
+	install -Dm644 man/posting-importer.1 debian/posting-importer/usr/share/man/man1/posting-importer.1
+	install -Dm644 README.md debian/posting-importer/usr/share/doc/posting-importer/README.md
+	install -Dm644 LICENSE debian/posting-importer/usr/share/doc/posting-importer/copyright
+
+override_dh_auto_clean:
+	cargo clean
+	rm -rf target/debian

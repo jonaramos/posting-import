@@ -1,0 +1,25 @@
+Source: posting-importer
+Section: utils
+Priority: optional
+Maintainer: Your Name <your.email@example.com>
+Build-Depends: cargo, rustc
+Standards-Version: 4.6.2
+Homepage: https://github.com/yourusername/posting-importer
+Vcs-Browser: https://github.com/yourusername/posting-importer
+Vcs-Git: https://github.com/yourusername/posting-importer.git
+
+Package: posting-importer
+Architecture: any
+Depends: ${misc:Depends}
+Description: Import API collections to Posting TUI format
+ posting-importer is a CLI tool that imports API collections from
+ popular API clients (Postman, Insomnia, Bruno) and converts them
+ to the Posting TUI's YAML format.
+ .
+ Features:
+  * Import Postman collections (v2.0/v2.1)
+  * Import Insomnia collections (v4/v5)
+  * Import Bruno collections (.bru and OpenCollection YAML)
+  * Preserves folder structure and request metadata
+  * Supports authentication configurations
+  * Git-friendly output format

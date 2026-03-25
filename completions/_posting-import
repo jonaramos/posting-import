@@ -1,0 +1,20 @@
+#compdef posting-import
+
+_posting-import() {
+    local -a commands
+
+    _arguments -C \
+        '(-a --app)'{-a,--app}'[Source application type]:source:(postman insomnia bruno)' \
+        '(-s --source)'{-s,--source}'[Path to the source collection file or directory]:file:_files' \
+        '(-t --target)'{-t,--target}'[Output directory for the Posting collection]:directory:_files -/' \
+        '(-w --overwrite)'{-w,--overwrite}'[Overwrite existing files]' \
+        '(-v --verbose)'{-v,--verbose}'[Verbose output]' \
+        '(-n --dry-run)'{-n,--dry-run}'[Do not write output]' \
+        '(-c --name)'{-c,--name}'[Collection name]:name:' \
+        '--list-sources[List supported source formats and exit]' \
+        '--format[Output format]:format:(text json yaml)' \
+        '(-h --help)'{-h,--help}'[Print help]' \
+        '(-V --version)'{-V,--version}'[Print version]'
+}
+
+_posting-import "$@"

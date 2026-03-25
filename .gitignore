@@ -1,0 +1,49 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test directories
+examples/
+target-dir/
+
+# Debug
+*.pdb
+*.dSYM/
+
+# Release builds (we commit source, not binaries)
+# Uncomment if you want to exclude binaries from the repo
+# bin/
+# *.exe
+# *.dll
+# *.so
+# *.dylib
+
+# Test coverage
+*.profraw
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Environment files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Cargo audit
+cargo-audit-report.txt

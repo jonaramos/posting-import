@@ -1,0 +1,42 @@
+# This manifest is for the winget-pkgs repository
+# See: https://github.com/microsoft/winget-pkgs
+
+PackageIdentifier: YourName.posting-import
+PackageVersion: 0.1.0
+PackageName: posting-import
+Publisher: Your Name
+PackageUrl: https://github.com/yourusername/posting-import
+License: MIT OR Apache-2.0
+LicenseUrl: https://github.com/yourusername/posting-import/blob/main/LICENSE
+Copyright: Copyright (c) 2024 Your Name
+CopyrightUrl: https://github.com/yourusername/posting-import/blob/main/LICENSE
+Summary: Import API collections from Postman, Insomnia, and Bruno to Posting TUI format
+Description: |
+  posting-import is a CLI tool that imports API collections from popular API clients
+  (Postman, Insomnia, Bruno) and converts them to the Posting TUI's YAML format.
+Moniker: posting-import
+Tags:
+  - api
+  - http
+  - postman
+  - insomnia
+  - bruno
+  - posting
+  - importer
+  - cli
+  - developer-tools
+Commands:
+  - posting-import
+Installers:
+  - Architecture: x64
+    InstallerType: portable
+    InstallerUrl: https://github.com/yourusername/posting-import/releases/download/v0.1.0/posting-import-x86_64-pc-windows-msvc.zip
+    InstallerSha256: REPLACE_WITH_ACTUAL_SHA256
+    ProductCode: '{yourusername}-posting-import'
+    ReleaseDate: '2024-01-01'
+  - Architecture: arm64
+    InstallerType: portable
+    InstallerUrl: https://github.com/yourusername/posting-import/releases/download/v0.1.0/posting-import-aarch64-pc-windows-msvc.zip
+    InstallerSha256: REPLACE_WITH_ACTUAL_SHA256
+    ProductCode: '{yourusername}-posting-import'
+    ReleaseDate: '2024-01-01'
