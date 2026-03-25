@@ -313,12 +313,7 @@ Contributions are welcome! Please read our contributing guidelines before submit
 
 ## License
 
-This project is licensed under either of:
-
-- [MIT License](LICENSE-MIT)
-- [Apache License 2.0](LICENSE-APACHE)
-
-at your option.
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Related Projects
 
