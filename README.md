@@ -1,7 +1,7 @@
 # posting-import
 
 [![Crates.io](https://img.shields.io/crates/v/posting-import)](https://crates.io/crates/posting-import)
-[![License](https://img.shields.io/crates/l/posting-import)](LICENSE)
+[![License](https://img.shields.io/github/license/jonaramos/posting-import)](LICENSE)
 [![Build](https://github.com/jonaramos/posting-import/actions/workflows/ci.yml/badge.svg)](https://github.com/jonaramos/posting-import/actions/workflows/ci.yml)
 
 Import API collections from Postman, Insomnia, and Bruno to [Posting TUI](https://posting.sh) format.

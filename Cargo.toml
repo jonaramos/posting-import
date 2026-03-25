@@ -2,9 +2,9 @@
 name = "posting-import"
 version = "0.1.0"
 edition = "2024"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["Jonathan Ramos <rr.jonathan@outlook.com>"]
 description = "Import API collections from Postman, Insomnia, and Bruno to Posting TUI format"
-license = "MIT OR Apache-2.0"
+license = "GPL-3.0-only"
 repository = "https://github.com/jonaramos/posting-import"
 keywords = ["api", "http", "postman", "insomnia", "bruno", "posting", "import"]
 categories = ["command-line-utilities", "web-programming"]
