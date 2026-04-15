@@ -38,11 +38,11 @@ jobs:
       - name: Update formula
         run: |
           VERSION=${{ github.event.release.tag_name }}
-          VERSION_STRIPped=${VERSION#v}
-          sed -i "s/version \".*\"/version \"${VERSION_STRIPped}\"/" Formula/posting-import.rb
-          sed -i "s/x86_sha \".*\"/x86_sha \"${{ steps.hashes.outputs.x86_sha }}\"/" Formula/posting-import.rb
-          sed -i "s/arm_sha \".*\"/arm_sha \"${{ steps.hashes.outputs.arm_sha }}\"/" Formula/posting-import.rb
-          sed -i "s/linux_sha \".*\"/linux_sha \"${{ steps.hashes.outputs.linux_sha }}\"/" Formula/posting-import.rb
+          VERSION_STRIPPED=${VERSION#v}
+          sed -i "s/version \".*\"/version \"${VERSION_STRIPPED}\"/" Formula/posting-import.rb
+          sed -i "s/sha256 \".*\" # x86_mac_sha/sha256 \"${{ steps.hashes.outputs.x86_sha }}\" # x86_mac_sha/" Formula/posting-import.rb
+          sed -i "s/sha256 \".*\" # arm_mac_sha/sha256 \"${{ steps.hashes.outputs.arm_sha }}\" # arm_mac_sha/" Formula/posting-import.rb
+          sed -i "s/sha256 \".*\" # linux_sha/sha256 \"${{ steps.hashes.outputs.linux_sha }}\" # linux_sha/" Formula/posting-import.rb
 
       - name: Commit and push
         run: |
